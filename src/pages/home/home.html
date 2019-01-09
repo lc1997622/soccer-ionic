@@ -1,0 +1,222 @@
+<ion-header>
+  <ion-navbar>
+      <button ion-button menuToggle>
+          <ion-icon name="menu"></ion-icon>
+        </button>
+    <ion-title>
+      精彩赛场
+    </ion-title>
+    <!--<ion-buttons end>
+      <button ion-button iocn-only (click)="chooseCity('/Showtime/HotCitiesByCinema.api')">
+        <p>{{cityname}}</p>
+      </button>
+    </ion-buttons>-->
+  </ion-navbar>
+  <div>
+    <ion-segment [(ngModel)]="type">
+      <ion-segment-button value="author">
+        关注的作者
+      </ion-segment-button>
+      <ion-segment-button value="collect">
+        收藏的视频
+      </ion-segment-button>
+      <ion-segment-button value="upload">
+        上传的视频
+      </ion-segment-button>
+    </ion-segment>
+  </div>
+</ion-header>
+<ion-content>
+    <!--<ion-input type="search" value=""></ion-input>
+    <ion-searchbar placeholder="请输入"></ion-searchbar>
+    <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>
+<ion-list>
+  <ion-item *ngFor="let item of items">
+    {{ item }}
+  </ion-item>
+</ion-list>-->
+<!--  <form action="javascript:return true;" >
+    <ion-searchbar placeholder="请输入" type="search"  [(ngModel)]="myInputValue" (keyup)='showResult($event,myInputValue)' [ngModelOptions]="{standalone: true}"></ion-searchbar>
+  </form>
+-->
+  <div [ngSwitch]="type">
+      <ion-list *ngSwitchCase="'author'">
+          <ion-row>
+          <ion-col col-6>
+          <ion-item *ngFor="let item of listnew1;">
+              <ion-item (click)="pushPage(item)">
+                <ion-item>
+                  <h2>{{item.title}}</h2>
+                  <p>{{item.releaseDate}}</p>
+                </ion-item>
+                <img [src]="item.image">
+                <ion-card-content>
+                  <p>
+                    {{item.type}}
+                  </p>
+                </ion-card-content>
+              </ion-item>
+              <ion-row>
+                <ion-col>
+                  <button ion-button icon-left clear small>
+                    <ion-icon name="star-half"></ion-icon>
+                    <div>{{item.locationName}}</div>
+                  </button>
+                </ion-col>
+                <ion-col>
+                  <button ion-button icon-left clear small>
+                    <ion-icon name="happy"></ion-icon>
+                    <div>{{item.wantedCount}}人想看</div>
+                  </button>
+                </ion-col>
+              </ion-row>
+          </ion-item>
+        </ion-col>
+        <ion-col col-6>
+            <ion-item *ngFor="let item of listnew2;">
+                <ion-item (click)="pushPage(item)">
+                  <ion-item>
+                    <h2>{{item.title}}</h2>
+                    <p>{{item.releaseDate}}</p>
+                  </ion-item>
+                  <img [src]="item.image">
+                  <ion-card-content>
+                    <p>
+                      {{item.type}}
+                    </p>
+                  </ion-card-content>
+                </ion-item>
+                <ion-row>
+                  <ion-col>
+                    <button ion-button icon-left clear small>
+                      <ion-icon name="star-half"></ion-icon>
+                      <div>{{item.locationName}}</div>
+                    </button>
+                  </ion-col>
+                  <ion-col>
+                    <button ion-button icon-left clear small>
+                      <ion-icon name="happy"></ion-icon>
+                      <div>{{item.wantedCount}}人想看</div>
+                    </button>
+                  </ion-col>
+                </ion-row>
+            </ion-item>
+          </ion-col>
+      </ion-row>
+        </ion-list>
+    <ion-list *ngSwitchCase="'collect'">
+      <ion-row>
+          <ion-col col-6>
+              <ion-item *ngFor="let item of list1;">
+                  <ion-item (click)="pushPage(item)">
+                    <ion-item>
+                      <p style="font-size:10px">{{item.title}}</p>
+                    </ion-item>
+                    <img [src]="item.img" >
+                      <p style="font-size:10px">
+                        {{item.time}}
+                      </p>
+                  </ion-item>
+                  <ion-row>
+                    <ion-col>
+                    </ion-col>
+                    <ion-col>
+                      <button ion-button icon-left clear small>
+                        <ion-icon name="happy"></ion-icon>
+                        <div>{{item.downloadcount}}人已下载</div>
+                      </button>
+                    </ion-col>
+                  </ion-row>
+              </ion-item>
+        </ion-col>
+        <ion-col col-6>
+            <ion-item *ngFor="let item of list2;">
+                <ion-item (click)="pushPage(item)">
+                  <ion-item>
+                    <p style="font-size:10px">{{item.title}}</p>
+                  </ion-item>
+                  <img [src]="item.img">
+                    <p style="font-size:10px">
+                      {{item.time}}
+                    </p>
+                </ion-item>
+                <ion-row>
+                  <ion-col>
+                  </ion-col>
+                  <ion-col>
+                    <button ion-button icon-left clear small>
+                      <ion-icon name="happy"></ion-icon>
+                      <div>{{item.downloadcount}}人已下载</div>
+                    </button>
+                  </ion-col>
+                </ion-row>
+            </ion-item>
+          </ion-col>
+      </ion-row>
+    </ion-list>
+    <ion-list *ngSwitchCase="'collect'">
+      <ion-row>
+      <ion-col col-6>
+      <ion-item *ngFor="let item of listnew1;">
+          <ion-item (click)="pushPage(item)">
+            <ion-item>
+              <h2>{{item.title}}</h2>
+              <p>{{item.releaseDate}}</p>
+            </ion-item>
+            <img [src]="item.image">
+            <ion-card-content>
+              <p>
+                {{item.type}}
+              </p>
+            </ion-card-content>
+          </ion-item>
+          <ion-row>
+            <ion-col>
+              <button ion-button icon-left clear small>
+                <ion-icon name="star-half"></ion-icon>
+                <div>{{item.locationName}}</div>
+              </button>
+            </ion-col>
+            <ion-col>
+              <button ion-button icon-left clear small>
+                <ion-icon name="happy"></ion-icon>
+                <div>{{item.wantedCount}}人想看</div>
+              </button>
+            </ion-col>
+          </ion-row>
+      </ion-item>
+    </ion-col>
+    <ion-col col-6>
+        <ion-item *ngFor="let item of listnew2;">
+            <ion-item (click)="pushPage(item)">
+              <ion-item>
+                <h2>{{item.title}}</h2>
+                <p>{{item.releaseDate}}</p>
+              </ion-item>
+              <img [src]="item.image">
+              <ion-card-content>
+                <p>
+                  {{item.type}}
+                </p>
+              </ion-card-content>
+            </ion-item>
+            <ion-row>
+              <ion-col>
+                <button ion-button icon-left clear small>
+                  <ion-icon name="star-half"></ion-icon>
+                  <div>{{item.locationName}}</div>
+                </button>
+              </ion-col>
+              <ion-col>
+                <button ion-button icon-left clear small>
+                  <ion-icon name="happy"></ion-icon>
+                  <div>{{item.wantedCount}}人想看</div>
+                </button>
+              </ion-col>
+            </ion-row>
+        </ion-item>
+      </ion-col>
+  </ion-row>
+    </ion-list>
+  </div>
+</ion-content>

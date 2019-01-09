@@ -1,0 +1,86 @@
+<ion-header>
+    <ion-item>
+        <button ion-button iocn-only clear item-start (click)="popView()">
+            <ion-icon name="arrow-back"></ion-icon>
+        </button>
+        <h2>{{item.title}}</h2>
+    </ion-item>
+</ion-header>
+
+<ion-content>
+
+                <vg-player>
+                    <video [vgMedia]="media" #media id="singleVideo" width= 100% height=100% preload="auto" controls>
+                        <source src="http://video19.ifeng.com/video09/2019/01/07/p7564914-102-009-213437.mp4?vid=ee19d3a0-8296-43bb-936a-481245222b93&uid=1546940283234_lvmfks7667&from=v_Free&pver=vHTML5Player_v2.0.0&sver=&se=FailGoal%E8%B6%B3%E7%90%83&cat=81-82&ptype=81&platform=pc&sourceType=h5&dt=1546867990000&gid=8cxKwWgs03tG&sign=3ede5890c1141cd7686cb420cd1d7286&tm=1546940283718&vkey=gIF2URon%2FNGT4emD8t1TCqqCinJNCWkNi8BA4SfkpuLr%2BtvZsZdXiHpdGb0qeCy3d5iSQNjKpzfwAGapDJt3tOSH7tdqIZphK7wbguLbbsxO%2FzQriKlNpvSfKM0R1oq0QKASWpEXQfd3NEnMosR8zAbXanM8UlPtMuw7o4aX4KkglPjBbmkjtM7R9qzGt%2F2cgvIn6Hc0YXgsqG7CG82OpZPttvXCEW2A3p4mzv5ZzMOek9x0zcPZT7pTdeO7xR8ksmY7gdV9Ujj5KzV9dvATGz0T8TBOFqUkkcPMYNosac%2BPm2sxWpkC4Bq3y4qx%2B4xI" type="video/mp4">
+                    </video>
+                </vg-player>                
+                <p>中文名：亚洲杯 中国-哈萨克斯坦 进球集锦</p>
+                <p>种类：集锦</p>
+                <p>简介：央视解说 全场进球集锦</p>
+    <!--<ion-list>
+        <ion-item>
+            <ion-item>
+                <ion-avatar item-start>
+                    <img [src]="item.director.img">
+                </ion-avatar>
+                <ion-note>
+                    <p>{{item.director.name}}</p>
+                    <p>导演</p>
+                </ion-note>
+            </ion-item>
+        </ion-item>
+        <ion-item *ngFor="let actor of item.actors">
+            <ion-item *ngIf="actor.name!=NULL">
+                <ion-avatar item-start>
+                    <img [src]="actor.img">
+                </ion-avatar>
+                <ion-note>
+                    <p>{{actor.name}}</p>
+                    <p>饰 {{actor.roleName}}</p>
+                </ion-note>
+            </ion-item>
+        </ion-item>
+    </ion-list>
+
+    <ion-grid>
+        <ion-row>
+            <ion-col col-10 offset-1>
+                <ion-item *ngFor="let img of item.stageImg.list">
+                    <img [src]="img.imgUrl">
+                </ion-item>
+            </ion-col>
+        </ion-row>
+    </ion-grid>-->
+</ion-content>
+<!--<ion-list no-lines>
+        <div >
+          <vg-player class="video-container">
+            <vg-overlay-play></vg-overlay-play>
+            <vg-buffering></vg-buffering>
+            <vg-controls>
+              <vg-play-pause></vg-play-pause>
+              <vg-playback-button></vg-playback-button>
+    
+              <vg-time-display vgProperty="current" vgFormat="mm:ss"></vg-time-display>
+              <vg-time-display vgProperty="left" vgFormat="mm:ss"></vg-time-display>
+              <vg-time-display vgProperty="total" vgFormat="mm:ss"></vg-time-display>
+              <vg-mute></vg-mute>
+              <vg-volume></vg-volume>
+              <vg-fullscreen></vg-fullscreen>
+            </vg-controls>
+            <video #myMedia [vgMedia]="myMedia" id="singleVideo"  
+            height="210" width="100" preload="auto" 
+            controls>
+              <source src="http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4
+              " type="video/mp4">
+            </video>
+          </vg-player>
+          <ion-item>
+            <ion-avatar item-left>
+               ![](assets/imgs/eagle.jpg)
+            </ion-avatar>
+            <h2><strong>标题</strong></h2>
+            <h3>描述</h3>
+          </ion-item>
+        </div>
+      </ion-list>-->

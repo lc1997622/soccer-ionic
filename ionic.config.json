@@ -1,0 +1,21 @@
+{
+  "name": "Timemovie",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular",
+  "proxies": [
+    {
+      "path": "/api",
+      "proxyUrl": "https://api-m.mtime.cn"
+    },
+    {
+      "path": "/api2",
+      "proxyUrl": "https://ticket-api-m.mtime.cn"
+    },
+    {
+      "path": "/api3",
+      "proxyUrl": "http://192.168.43.78:8080"
+    }
+  ]
+}
